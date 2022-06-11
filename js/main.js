@@ -74,6 +74,17 @@ SongLine.forEach((e, index) => {
 
     })
 })
+SongLine.forEach((e, index) => {
+    e.addEventListener("touchend", () => {
+
+        index === 0 ? Musics.currentTime = e.value : CurrentTrack.currentTime = e.value
+        CurrentValue = CurrentTimeLine(e.value, e.max, index, index === 0 ? Musics : CurrentTrack);
+        SetTime(TimeSongCurrent[index], e.value);
+        e.style.background = `linear-gradient(to right ,${ColorRange} 0%,${ColorRange} ${CurrentValue}%, white ${CurrentValue}%, white 100%)`
+        MoveSong = false;
+
+    })
+})
 SongPlay.forEach((e, index) => {
     e.addEventListener("click", function MusicStart () {
         if (!MusicPlay) {
