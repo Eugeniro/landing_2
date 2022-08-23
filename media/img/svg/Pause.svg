@@ -1,0 +1,6 @@
+<svg id="PauseSVG" width="25" height="25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="5,100 5,5 30,5 30,100"
+    />
+	   <polygon points="45,100 45,5 70,5 70,100"
+    />
+    </svg>
