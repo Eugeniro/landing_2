@@ -6,43 +6,46 @@
     <meta http-equiv="X-UA-Compatible"content="IE=edge">
     <meta name="viewport"content="width=device-width,initial-scale=1">
     <link rel="stylesheet"href="css/main.css">
-    <title></title>
+    <title>Bright Lights</title>
 </head>
 
 <body>
     <header>
 
         <div class="Header_Video">
-            <video class="Header_Video_play"type="video/mp4"src="media/video/BrighLights.mp4"autoplay muted loop>
-            </video>
         </div>
         <div class="Header_main">
             <div class="Header_top">
                 <div class="Header_sub_top">
-                    <div class="Header_logo"><img src="media/img/logo.png"alt=""></div>
+                    <div class="Header_logo">
+                        <picture>
+                            <source type="image/webp"srcset="media/img/logo.webp">
+                            <img src="media/img/logo.png"alt="Logo">
+                        </picture>                 
+                    </div>
                     <div class="Header_Navigation_Burger">
                         <svg>
                             <use xlink:href="media/img/svg/BurgerMenu.svg#Burger"/>
                         </svg>
                         <nav class="Header_Navigation_mob">
                             <ul>
-                                <li> <a href="#_Author">About</a></li>
-                                <li> <a href="#_News">News</a></li>
-                                <li> <a href="#_Tracks">Music</a></li>
-                                <li> <a href="#_Gallery">Media</a></li>
-                                <li> <a href="#_Tickets">Tours</a></li>
-                                <li> <a href="#Contacts">Contacts</a></li>
+                                <li>About</li>
+                                <li>News</li>
+                                <li>Music</li>
+                                <li>Media</li>
+                                <li>Tours</li>
+                                <li>Contacts</li>
                             </ul>
                         </nav>
                     </div>
                     <nav class="Header_Navigation">
                         <ul>
-                            <li> <a href="#_Author">About</a></li>
-                            <li> <a href="#_News">News</a></li>
-                            <li> <a href="#_Tracks">Music</a></li>
-                            <li> <a href="#_Gallery">Media</a></li>
-                            <li> <a href="#_Tickets">Tours</a></li>
-                            <li> <a href="#Contacts">Contacts</a></li>
+                            <li>About</li>
+                            <li>News</li>
+                            <li>Music</li>
+                            <li>Media</li>
+                            <li>Tours</li>
+                            <li>Contacts</li>
                         </ul>
                     </nav>
                 </div>
@@ -80,27 +83,27 @@
     </header>
     <main>
         <div class="container">
-            <div id="_News"class="news">
-                <div class="news_item"style="background-image: url(media/img/TopImg_1.png);">
+            <section class="news">
+                <div class="news_item"style="background-image: url(media/img/TopImg_1.webp);">
                     <div class="news_item_text">
                         <p>Working on my upcoming full-lenth
                             album that`s releasing later this year.</p>
                     </div>
                 </div>
-                <div class="news_item"style="background-image: url(media/img/TopImg_2.png);">
+                <div class="news_item"style="background-image: url(media/img/TopImg_2.webp);">
                     <div class="news_item_text">
                         <p>Halloween vibes.</p>
                         <p>Listen my new track!</p>
                     </div>
                 </div>
-                <div class="news_item"style="background-image: url(media/img/TopImg_3.png);">
+                <div class="news_item"style="background-image: url(media/img/TopImg_3.webp);">
                     <div class="news_item_text">
                         <p>WarForLove is OUT NOW!! </p>
                         <p>Stream it here!</p>
                     </div>
                 </div>
-            </div>
-            <div id="_Author"class="Author">
+            </section>
+            <section class="Author">
                 <div class="Author_Name">
                     <svg>
                         <use xlink:href="media/img/svg/MusicBass.svg#MusicBass"></use>
@@ -137,12 +140,22 @@
                         </div>
                     </div>
                     <div class="Author_About_img">
-                        <div class="Author_About_img_item"><img src="media/img/Bl_1.png"alt=""></div>
-                        <div class="Author_About_img_item"><img src="media/img/Bl_2.png"style="z-index:-1;"alt=""></div>
+                        <div class="Author_About_img_item">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/Bl_1.webp 1x,media/img/Bl_1@2x.webp 2x,media/img/Bl_1@3x.webp 3x">
+                                <img src="media/img/Bl_1.jpg"srcset="media/img/Bl_1@2x.jpg 2x,media/img/Bl_1@3x.jpg 3x"alt="Bright Lights">
+                            </picture>
+                        </div>
+                        <div class="Author_About_img_item">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/Bl_2.webp 1x,media/img/Bl_2@2x.webp 2x,media/img/Bl_2@3x.webp 3x">
+                                <img src="media/img/Bl_2.jpg"srcset="media/img/Bl_2@2x.jpg 2x,media/img/Bl_2@3x.jpg 3x"style="z-index:-1;"alt="Bright Lights">
+                            </picture>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="quote">
+            </section>
+            <section class="quote">
                 <div class="quote_about">
                     <div class="quote_about_text">
                         <p>“In an age where mainstream music is designed to be as
@@ -154,12 +167,20 @@
                         <a href="">PopULove.net</a>
                     </div>
                 </div>
-                <div class="quote_img"><img src="media/img/Populove.png"alt=""></div>
-            </div>
-            <div id="_Tracks"class="Tracks">
+                <div class="quote_img">
+                    <picture>
+                        <source type="image/webp"srcset="media/img/Populove.webp 1x,media/img/Populove@2x.webp 2x,media/img/Populove@3x.webp 3x">
+                        <img src="media/img/Populove.jpg"srcset="media/img/Populove@2x.jpg 2x,media/img/Populove@3x.jpg 3x"alt="Populove">
+                    </picture>
+                </div>
+            </section>
+            <section class="Tracks">
                 <div class="Tracks_img">
                     <div class="Tracks_img_circle">
-                        <img src="media/img/lastTrack.png"alt="">
+                        <picture>
+                            <source type="image/webp"srcset="media/img/lastTrack.webp 1x,media/img/lastTrack@2x.webp 2x,media/img/lastTrack@3x.webp 3x">
+                            <img src="media/img/lastTrack.png"srcset="media/img/lastTrack@2x.png 2x,media/img/lastTrack@3x.png 3x"alt="lastTrack">
+                        </picture>
                     </div>
                 </div>
                 <div class="Tracks_about">
@@ -250,72 +271,110 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="_Gallery"class="Gallery">
+            </section>
+            <section class="Gallery">
                 <div class="grid_item item_1">
-                    <img src="media/img/imgGallary_1.png"alt="">
+                    <picture>
+                        <source type="image/webp"srcset="media/img/imgGallary_1.webp 1x,media/img/imgGallary_1@2x.webp 2x,media/img/imgGallary_1@3x.webp 3x">
+                        <img src="media/img/imgGallary_1.jpg"srcset="media/img/imgGallary_1@2x.jpg 2x,media/img/imgGallary_1@3x.jpg 3x"alt="Gallary">
+                    </picture>
                     <div class="Gallery_PopUp">
                         <div class="Gallery_PopUp_close">
                             <div class="PopUp_close">
                             </div>
                         </div>
                         <div class="Gallery_PopUp_img">
-                            <img src="media/img/FullimgGallary_1.png"alt=""></div>
+                            <picture>
+                                <source type="image/webp"srcset="media/img/FullimgGallary_1.webp 1x,media/img/FullimgGallary_1@2x.webp 2x,media/img/FullimgGallary_1@3x.webp 3x">
+                                <img src="media/img/FullimgGallary_1.jpg"srcset="media/img/FullimgGallary_1@2x.jpg 2x,media/img/FullimgGallary_1@3x.jpg 3x"alt="Gallary">
+                            </picture>
+                        </div>
                     </div>
                 </div>
                 <div class="grid_item item_2">
-                    <img src="media/img/imgGallary_2.png"alt="">
+                    <picture>
+                        <source type="image/webp"srcset="media/img/imgGallary_2.webp 1x,media/img/imgGallary_2@2x.webp 2x,media/img/imgGallary_2@3x.webp 3x">
+                        <img src="media/img/imgGallary_2.jpg"srcset="media/img/imgGallary_2@2x.jpg 2x,media/img/imgGallary_2@3x.jpg 3x"alt="Gallary">
+                    </picture>
                     <div class="Gallery_PopUp">
                         <div class="Gallery_PopUp_close">
                             <div class="PopUp_close">
                             </div>
                         </div>
                         <div class="Gallery_PopUp_img">
-                            <img src="media/img/FullimgGallary_2.png"alt=""></div>
+                            <picture>
+                                <source type="image/webp"srcset="media/img/FullimgGallary_2.webp 1x,media/img/FullimgGallary_2@2x.webp 2x,media/img/FullimgGallary_2@3x.webp 3x">
+                                <img src="media/img/FullimgGallary_2.jpg"srcset="media/img/FullimgGallary_2@2x.jpg 2x,media/img/FullimgGallary_2@3x.jpg 3x"alt="Gallary">
+                            </picture>
+                        </div>
                     </div>
                 </div>
                 <div class="grid_item item_3">
-                    <img src="media/img/imgGallary_3.png"alt="">
+                    <picture>
+                        <source type="image/webp"srcset="media/img/imgGallary_3.webp 1x,media/img/imgGallary_3@2x.webp 2x,media/img/imgGallary_3@3x.webp 3x">
+                        <img src="media/img/imgGallary_3.jpg"srcset="media/img/imgGallary_3@2x.jpg 2x,media/img/imgGallary_3@3x.jpg 3x"alt="Gallary">
+                    </picture>
                     <div class="Gallery_PopUp">
                         <div class="Gallery_PopUp_close">
                             <div class="PopUp_close">
                             </div>
                         </div>
                         <div class="Gallery_PopUp_img">
-                            <img src="media/img/FullimgGallary_3.png"alt=""></div>
+                            <picture>
+                                <source type="image/webp"srcset="media/img/FullimgGallary_3.webp 1x,media/img/FullimgGallary_3@2x.webp 2x,media/img/FullimgGallary_3@3x.webp 3x">
+                                <img src="media/img/FullimgGallary_3.jpg"srcset="media/img/FullimgGallary_3@2x.jpg 2x,media/img/FullimgGallary_3@3x.jpg 3x"alt="Gallary">
+                            </picture>
+                        </div>
                     </div>
                 </div>
                 <div class="grid_item item_4">
-                    <img src="media/img/imgGallary_4.png"alt="">
+                    <picture>
+                        <source type="image/webp"srcset="media/img/imgGallary_4.webp 1x,media/img/imgGallary_4@2x.webp 2x,media/img/imgGallary_4@3x.webp 3x">
+                        <img src="media/img/imgGallary_4.jpg"srcset="media/img/imgGallary_4@2x.jpg 2x,media/img/imgGallary_4@3x.jpg 3x"alt="Gallary">
+                    </picture>
                     <div class="Gallery_PopUp">
                         <div class="Gallery_PopUp_close">
                             <div class="PopUp_close">
                             </div>
                         </div>
                         <div class="Gallery_PopUp_img">
-                            <img src="media/img/FullimgGallary_4.png"alt=""></div>
+                            <picture>
+                                <source type="image/webp"srcset="media/img/FullimgGallary_4.webp 1x,media/img/FullimgGallary_4@2x.webp 2x,media/img/FullimgGallary_4@3x.webp 3x">
+                                <img src="media/img/FullimgGallary_4.jpg"srcset="media/img/FullimgGallary_4@2x.jpg 2x,media/img/FullimgGallary_4@3x.jpg 3x"alt="Gallary">
+                            </picture>
+                        </div>
                     </div>
                 </div>
                 <div class="grid_item item_5">
-                    <img src="media/img/imgGallary_5.png"alt="">
+                    <picture>
+                        <source type="image/webp"srcset="media/img/imgGallary_5.webp 1x,media/img/imgGallary_5@2x.webp 2x,media/img/imgGallary_5@3x.webp 3x">
+                        <img src="media/img/imgGallary_5.jpg"srcset="media/img/imgGallary_5@2x.jpg 2x,media/img/imgGallary_5@3x.jpg 3x"alt="Gallary">
+                    </picture>
                     <div class="Gallery_PopUp">
                         <div class="Gallery_PopUp_close">
                             <div class="PopUp_close">
                             </div>
                         </div>
                         <div class="Gallery_PopUp_img">
-                            <img src="media/img/FullimgGallary_5.png"alt=""></div>
+                            <picture>
+                                <source type="image/webp"srcset="media/img/FullimgGallary_5.webp 1x,media/img/FullimgGallary_5@2x.webp 2x,media/img/FullimgGallary_5@3x.webp 3x">
+                                <img src="media/img/FullimgGallary_5.jpg"srcset="media/img/FullimgGallary_5@2x.jpg 2x,media/img/FullimgGallary_5@3x.jpg 3x"alt="Gallary">
+                            </picture>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-        <div id="_Tickets"class="Tickets">
+        <section class="Tickets">
             <div class="Tickets_button left"></div>
             <div class="Tickets_slide">
                 <div class="Tickets_slide_train">
                     <div class="Tickets_slide_item">
                         <div class="Tickets_slide_item_img">
-                            <img src="media/img/ticket_1.png"alt="">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/ticket_1.webp 1x,media/img/ticket_1@2x.webp 2x,media/img/ticket_1@3x.webp 3x">
+                                <img src="media/img/ticket_1.jpg"srcset="media/img/ticket_1@2x.jpg 2x,media/img/ticket_1@3x.jpg 3x"alt="tickets">
+                            </picture>
                         </div>
                         <div class="Tickets_slide_item_about">
                             <div class="Tickets_slide_item_about_text">
@@ -336,7 +395,10 @@
                     </div>
                     <div class="Tickets_slide_item">
                         <div class="Tickets_slide_item_img">
-                            <img src="media/img/ticket_2.png"alt="">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/ticket_2.webp 1x,media/img/ticket_2@2x.webp 2x,media/img/ticket_2@3x.webp 3x">
+                                <img src="media/img/ticket_2.jpg"srcset="media/img/ticket_2@2x.jpg 2x,media/img/ticket_2@3x.jpg 3x"alt="tickets">
+                            </picture>
                         </div>
                         <div class="Tickets_slide_item_about">
                             <div class="Tickets_slide_item_about_text">
@@ -357,7 +419,10 @@
                     </div>
                     <div class="Tickets_slide_item">
                         <div class="Tickets_slide_item_img">
-                            <img src="media/img/ticket_3.png"alt="">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/ticket_3.webp 1x,media/img/ticket_3@2x.webp 2x,media/img/ticket_3@3x.webp 3x">
+                                <img src="media/img/ticket_3.jpg"srcset="media/img/ticket_3@2x.jpg 2x,media/img/ticket_3@3x.jpg 3x"alt="tickets">
+                            </picture>
                         </div>
                         <div class="Tickets_slide_item_about">
                             <div class="Tickets_slide_item_about_text">
@@ -378,7 +443,10 @@
                     </div>
                     <div class="Tickets_slide_item">
                         <div class="Tickets_slide_item_img">
-                            <img src="media/img/ticket_2.png"alt="">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/ticket_2.webp 1x,media/img/ticket_2@2x.webp 2x,media/img/ticket_2@3x.webp 3x">
+                                <img src="media/img/ticket_2.jpg"srcset="media/img/ticket_2@2x.jpg 2x,media/img/ticket_2@3x.jpg 3x"alt="tickets">
+                            </picture>
                         </div>
                         <div class="Tickets_slide_item_about">
                             <div class="Tickets_slide_item_about_text">
@@ -399,7 +467,10 @@
                     </div>
                     <div class="Tickets_slide_item">
                         <div class="Tickets_slide_item_img">
-                            <img src="media/img/ticket_1.png"alt="">
+                            <picture>
+                                <source type="image/webp"srcset="media/img/ticket_1.webp 1x,media/img/ticket_1@2x.webp 2x,media/img/ticket_1@3x.webp 3x">
+                                <img src="media/img/ticket_1.jpg"srcset="media/img/ticket_1@2x.jpg 2x,media/img/ticket_1@3x.jpg 3x"alt="tickets">
+                            </picture>
                         </div>
                         <div class="Tickets_slide_item_about">
                             <div class="Tickets_slide_item_about_text">
@@ -421,11 +492,15 @@
                 </div>
             </div>
             <div class="Tickets_button right"></div>
-        </div>
+        </section>
     </main>
-    <footer id="Contacts">
+    <footer>
         <div class="Footer">
-            <div class="Header_logo"><img src="media/img/logo.png"alt=""></div>
+            <div class="Header_logo">
+                 <picture>
+                <source type="image/webp"srcset="media/img/logo.webp">
+                <img src="media/img/logo.png"alt="Logo">
+            </picture>  
             <div class="Footer_text">
                 <div class="Footer_text_item">
                     <div class="Footer_text_item_header">
@@ -505,7 +580,7 @@
                 <p>© 2020 DJ bright lights.</p>
             </div>
         </div>
-    </footer>
+    </div></footer>
     <script src="js/main.js"></script>
 </body>
 

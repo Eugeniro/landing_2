@@ -1,3 +1,12 @@
+window.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelector(".Header_Video").innerHTML = ` <video style=" background-image: url(../media/img/headerBg.webp);  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;" class="Header_Video_play" autoplay muted loop>
+    <source type='video/mp4' src="media/video/BrighLights.mp4">
+</video>`
+
+})
 /*Player*/
 const SongLine = document.querySelectorAll(".Song_setting_range");
 const SongPlay = document.querySelectorAll(".Song_Play");
@@ -17,10 +26,10 @@ let CurrentTrack = TrackList[0];
 let TimerFrameTrack;
 let PlayerfistPlay = false;
 let PlayerSecondPlay = false;
-Musics.volume=0.2;
+Musics.volume = 0.2;
 for (let i = 0; i < TrackList.length; i++) {
-    TrackList[i].volume=0.2
-    
+    TrackList[i].volume = 0.2
+
 }
 function SetTime(ClassTime, TimeValue) {
     let min = Math.floor(TimeValue / 60);
@@ -86,7 +95,7 @@ SongLine.forEach((e, index) => {
     })
 })
 SongPlay.forEach((e, index) => {
-    e.addEventListener("click", function MusicStart () {
+    e.addEventListener("click", function MusicStart() {
         if (!MusicPlay) {
             if (CurrentValue === 100) {
                 SongLine[index].value = 0;
@@ -94,14 +103,13 @@ SongPlay.forEach((e, index) => {
                 SetTime(TimeSongCurrent[index], SongLine[index].value);
                 SongLine[index].style.background = `linear-gradient(to right ,${ColorRange} 0%,${ColorRange} ${CurrentValue}%, white ${CurrentValue}%, white 100%)`;
             }
-            if(index === 0)
-            {
+            if (index === 0) {
                 Musics.play();
                 PlayerfistPlay = true
 
-            } else
-            { CurrentTrack.play();
-                PlayerSecondPlay=true;
+            } else {
+                CurrentTrack.play();
+                PlayerSecondPlay = true;
             }
             MusicPlay = true;
             SVGplay[index].style.display = "none";
@@ -119,8 +127,7 @@ SongPlay.forEach((e, index) => {
                     CurrentTrack.pause();
                     MusicStart();
                 }
-                else
-                {
+                else {
                     PlayerfistPlay = false
                     Musics.pause();
                     SVGplay[index].style.display = "block";
@@ -135,8 +142,7 @@ SongPlay.forEach((e, index) => {
                     Musics.pause();
                     MusicStart();
                 }
-                else
-                {
+                else {
                     PlayerSecondPlay = false
                     CurrentTrack.pause();
                     SVGplay[index].style.display = "block";
@@ -194,49 +200,93 @@ function _StartTrack(IndexTrack) {
     CurrentTrack = TrackList[IndexTrack];
     CurrentTrack.play();
     MusicPlay = true;
-    PlayerSecondPlay=true;
+    PlayerSecondPlay = true;
     SVGplay[1].style.display = "none";
     SVGpause[1].style.display = "block";
     _MusicPlay(SongLine[1], TimeSongCurrent[1], 1, CurrentTrack)
 
 }
 /*Heder move*/
-const HederTop=document.querySelector(".Header_sub_top");
-window.addEventListener("scroll",()=>
-{
- 
-        if(window.pageYOffset>0)HederTop.classList.add("Active");
-        else HederTop.classList.remove("Active")
-   
+const HederTop = document.querySelector(".Header_sub_top");
+const HeaderLogo = document.querySelector(".Header_logo");
+HeaderLogo.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+})
+window.addEventListener("scroll", () => {
+
+    if (window.pageYOffset > 0) HederTop.classList.add("Active");
+    else HederTop.classList.remove("Active")
+
+})
+/*Heder navigation*/
+const NavHeaderItem = document.querySelectorAll(".Header_Navigation>ul>li")
+NavHeaderItem.forEach((e) => {
+    e.addEventListener("click", () => {
+        switch (e.innerHTML) {
+            case "About":
+                window.scrollTo(0, document.querySelector(".Author").offsetTop-150);
+                break;
+            case "News":
+                window.scrollTo(0, document.querySelector(".news").offsetTop-150);
+                break;
+            case "Music":
+                window.scrollTo(0, document.querySelector(".Tracks").offsetTop-150);
+                break;
+            case "Media":
+                window.scrollTo(0, document.querySelector(".Gallery").offsetTop-150);
+                break;
+            case "Tours":
+                window.scrollTo(0, document.querySelector(".Tickets").offsetTop-150);
+                break;
+            case "Contacts":
+                window.scrollTo(0, document.querySelector("footer").offsetTop-150);
+                break;
+        }
+    })
 })
 /*Heder Burger*/
-const BurgerNavItem=document.querySelectorAll(".Header_Navigation_mob>ul>li");
-const BurgerMenu=document.querySelector(".Header_Navigation_Burger");
-const BurgerNavMenu=document.querySelector(".Header_Navigation_mob");
-BurgerMenu.addEventListener("click",()=>
-{
+const BurgerNavItem = document.querySelectorAll(".Header_Navigation_mob>ul>li");
+const BurgerMenu = document.querySelector(".Header_Navigation_Burger");
+const BurgerNavMenu = document.querySelector(".Header_Navigation_mob");
+BurgerMenu.addEventListener("click", () => {
     BurgerNavMenu.classList.toggle("Active")
 })
-BurgerNavItem.forEach(e=>
-    {
-        e.addEventListener("click",(event)=>
-        {
-            event.stopPropagation();
-            BurgerNavMenu.classList.remove("Active")
-        })
+BurgerNavItem.forEach(e => {
+    e.addEventListener("click", (event) => {
+        event.stopPropagation();
+        switch (e.innerHTML) {
+            case "About":
+                window.scrollTo(0, document.querySelector(".Author").offsetTop-150);
+                break;
+            case "News":
+                window.scrollTo(0, document.querySelector(".news").offsetTop-150);
+                break;
+            case "Music":
+                window.scrollTo(0, document.querySelector(".Tracks").offsetTop-150);
+                break;
+            case "Media":
+                window.scrollTo(0, document.querySelector(".Gallery").offsetTop-150);
+                break;
+            case "Tours":
+                window.scrollTo(0, document.querySelector(".Tickets").offsetTop-150);
+                break;
+            case "Contacts":
+                window.scrollTo(0, document.querySelector("footer").offsetTop-150);
+                break;
+        }
+        BurgerNavMenu.classList.remove("Active")
     })
+})
 /*Image_swap*/
 const AuthorImgItem = document.querySelectorAll(".Author_About_img_item");
-const AuthorImg = document.querySelectorAll(".Author_About_img_item>img");
-function SwapFist()
-{
+const AuthorImg = document.querySelectorAll(".Author_About_img_item img");
+function SwapFist() {
     AuthorImgItem[0].className = "Author_About_img_item fist";
     AuthorImgItem[1].className = "Author_About_img_item second";
     AuthorImg[0].className = "second";
     AuthorImg[1].className = "fist";
 }
-function SwapSecond()
-{
+function SwapSecond() {
     AuthorImgItem[0].className = "Author_About_img_item second";
     AuthorImgItem[1].className = "Author_About_img_item fist";
     AuthorImg[0].className = "fist";
@@ -244,113 +294,136 @@ function SwapSecond()
 }
 
 /*popup Image*/
-const ImgGallery=document.querySelectorAll(".grid_item");
-const ImgGalleryPopup=document.querySelectorAll(".Gallery_PopUp");
-const ImgPopup=document.querySelectorAll(".Gallery_PopUp_img>img");
-const ClosePopup=document.querySelectorAll(".PopUp_close");
-ClosePopup.forEach((e,index)=>
-{
-    e.addEventListener("click",(event)=>
-    {
+const ImgGallery = document.querySelectorAll(".grid_item");
+const ImgGalleryPopup = document.querySelectorAll(".Gallery_PopUp");
+const ImgPopup = document.querySelectorAll(".Gallery_PopUp_img>img");
+const ClosePopup = document.querySelectorAll(".PopUp_close");
+ClosePopup.forEach((e, index) => {
+    e.addEventListener("click", (event) => {
         event.stopPropagation();
         ImgGalleryPopup[index].classList.add("close")
         document.body.removeAttribute("style");
-        setTimeout(()=>
-        {
+        setTimeout(() => {
             ImgGalleryPopup[index].classList.remove("close")
             ImgGalleryPopup[index].classList.remove("Active")
-        },500)
-        
+        }, 500)
+
     })
 })
-ImgGalleryPopup.forEach((e)=>
-{
-    e.addEventListener("click",(event)=>
-    {
+ImgGalleryPopup.forEach((e) => {
+    e.addEventListener("click", (event) => {
         event.stopPropagation();
         e.classList.add("close")
         document.body.removeAttribute("style");
-        setTimeout(()=>
-        {
+        setTimeout(() => {
             e.classList.remove("close")
             e.classList.remove("Active")
-        },500)
-        
+        }, 500)
+
     })
 })
-ImgPopup.forEach((e)=>
-{
-    e.addEventListener("click",(event)=>
-    {
+ImgPopup.forEach((e) => {
+    e.addEventListener("click", (event) => {
         event.stopPropagation();
-})})
-ImgGallery.forEach((e,index)=>
-    {
-        e.addEventListener("click",(event)=>{
-            event.stopPropagation();
-            ImgGalleryPopup[index].classList.add("Active")
-            document.body.style.overflow="hidden";
-        })
-    });
+    })
+})
+ImgGallery.forEach((e, index) => {
+    e.addEventListener("click", (event) => {
+        event.stopPropagation();
+        ImgGalleryPopup[index].classList.add("Active")
+        document.body.style.overflow = "hidden";
+    })
+});
 /*Slide*/
-const LeftButton=document.querySelector(".Tickets_button.left")
-const RightButton=document.querySelector(".Tickets_button.right")
-const SlideTrain=document.querySelector(".Tickets_slide_train")
-const Slideitem=document.querySelector(".Tickets_slide_item")
-let SizeMove=parseInt(getComputedStyle(Slideitem).minWidth)+parseInt(getComputedStyle(Slideitem).marginRight);
-let CanIswap=true;
-let CountSlideVivew=3;
-LeftButton.addEventListener("click",()=>{  
-    if(CanIswap)
-    {
-        if (parseInt(getComputedStyle(SlideTrain).left)<0)
-       { SlideTrain.style.left = `${parseInt(getComputedStyle(SlideTrain).left)+SizeMove}px`;
-    CanIswap=false
-    setTimeout(()=>{
-        CanIswap=true
-    },800)}
-}
+const LeftButton = document.querySelector(".Tickets_button.left")
+const RightButton = document.querySelector(".Tickets_button.right")
+const SlideTrain = document.querySelector(".Tickets_slide_train")
+const Slideitem = document.querySelector(".Tickets_slide_item")
+let SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+let CanIswap = true;
+let CountSlideVivew = 3;
+LeftButton.addEventListener("click", () => {
+    if (CanIswap) {
+        if (parseInt(getComputedStyle(SlideTrain).left) < 0) {
+            SlideTrain.style.left = `${parseInt(getComputedStyle(SlideTrain).left) + SizeMove}px`;
+            CanIswap = false
+            setTimeout(() => {
+                CanIswap = true
+            }, 800)
+        }
+    }
 })
-RightButton.addEventListener("click",()=>{
-    if(CanIswap)
-    {
-        if((parseInt(getComputedStyle(SlideTrain).left)*-1)+CountSlideVivew*SizeMove<parseInt(getComputedStyle(SlideTrain).width))
-       { SlideTrain.style.left = `${parseInt(getComputedStyle(SlideTrain).left)-SizeMove}px`;
-        CanIswap=false
-        setTimeout(()=>{
-            CanIswap=true
-        },800)
-    }
-    }
-  
-})
-/*WidthScreen*/
-function SetSizeSpace()
-{
-    if (window.screen.width<=1280 && window.screen.width>912)
-    {CountSlideVivew=2;
-    SizeMove=parseInt(getComputedStyle(Slideitem).minWidth)+parseInt(getComputedStyle(Slideitem).marginRight);
-    }
-    if (window.screen.width<=979)
-    {
-        AuthorImgItem[1].removeAttribute("style");
-        AuthorImgItem[0].removeEventListener("click", SwapFist);
-        AuthorImgItem[1].removeEventListener("click", SwapSecond);
-    }
-    else  if (window.screen.width>979)
-    {
-        AuthorImgItem[0].addEventListener("click", SwapFist)
-        AuthorImgItem[1].addEventListener("click", SwapSecond)
-        AuthorImgItem[1].style.cssText="top:66px;left:95px;z-index:-2;background-color: rgba(0,0,0,0.7);"
+RightButton.addEventListener("click", () => {
+    if (CanIswap) {
+        if ((parseInt(getComputedStyle(SlideTrain).left) * -1) + CountSlideVivew * SizeMove < parseInt(getComputedStyle(SlideTrain).width)) {
+            SlideTrain.style.left = `${parseInt(getComputedStyle(SlideTrain).left) - SizeMove}px`;
+            CanIswap = false
+            setTimeout(() => {
+                CanIswap = true
+            }, 800)
+        }
     }
 
-    if (window.screen.width<=912 && window.screen.width>532)
-    {CountSlideVivew=1;
-    SizeMove=parseInt(getComputedStyle(Slideitem).minWidth)+parseInt(getComputedStyle(Slideitem).marginRight);
+})
+/*WidthScreen*/
+function SetSizeSpace() {
+    if (window.screen.width !== window.innerWidth) {
+        if (window.innerWidth > 1280 && CountSlideVivew !== 3) {
+            CountSlideVivew = 3;
+            SlideTrain.style.left = 0
+            SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+        }
+        if (window.innerWidth <= 1280 && window.innerWidth > 912 && CountSlideVivew !== 2) {
+            CountSlideVivew = 2;
+            SlideTrain.style.left = 0
+            SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+        }
+        if (window.innerWidth <= 979) {
+            AuthorImgItem[1].removeAttribute("style");
+            AuthorImgItem[0].removeEventListener("click", SwapFist);
+            AuthorImgItem[1].removeEventListener("click", SwapSecond);
+        }
+        else if (window.innerWidth > 979) {
+            AuthorImgItem[0].addEventListener("click", SwapFist)
+            AuthorImgItem[1].addEventListener("click", SwapSecond)
+            AuthorImgItem[1].style.cssText = "top:66px;left:95px;z-index:-2;background-color: rgba(0,0,0,0.7);"
+        }
+
+        if (window.innerWidth <= 912 && window.innerWidth > 532 && CountSlideVivew !== 1) {
+            CountSlideVivew = 1;
+            SlideTrain.style.left = 0
+            SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+        }
+    } else {
+        if (window.screen.width > 1280 && CountSlideVivew !== 3) {
+            CountSlideVivew = 3;
+            SlideTrain.style.left = 0
+            SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+        }
+        if (window.screen.width <= 1280 && window.screen.width > 912 && CountSlideVivew !== 2) {
+            CountSlideVivew = 2;
+            SlideTrain.style.left = 0
+            SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+        }
+        if (window.screen.width <= 979) {
+            AuthorImgItem[1].removeAttribute("style");
+            AuthorImgItem[0].removeEventListener("click", SwapFist);
+            AuthorImgItem[1].removeEventListener("click", SwapSecond);
+        }
+        else if (window.screen.width > 979) {
+            AuthorImgItem[0].addEventListener("click", SwapFist)
+            AuthorImgItem[1].addEventListener("click", SwapSecond)
+            AuthorImgItem[1].style.cssText = "top:66px;left:95px;z-index:-2;background-color: rgba(0,0,0,0.7);"
+        }
+
+        if (window.screen.width <= 912 && window.screen.width > 532 && CountSlideVivew !== 1) {
+            CountSlideVivew = 1;
+            SlideTrain.style.left = 0
+            SizeMove = parseInt(getComputedStyle(Slideitem).minWidth) + parseInt(getComputedStyle(Slideitem).marginRight);
+        }
     }
 }
 SetSizeSpace()
-window.addEventListener("resize",()=>
-{ 
+window.addEventListener("resize", () => {
     SetSizeSpace()
 })
