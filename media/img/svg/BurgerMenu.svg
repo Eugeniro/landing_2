@@ -1,7 +1,0 @@
-<svg display="none" xmlns="http://www.w3.org/2000/svg" >
-    <symbol id="Burger" viewBox="0 0 26 20">
-        <rect width="26" height="4" rx="2"/>
-        <rect y="8" width="26" height="4" rx="2"/>
-        <rect y="16" width="26" height="4" rx="2"/>
-    </symbol>
-</svg>
