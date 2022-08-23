@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-    document.querySelector(".Header_Video").innerHTML = ` <video style=" background-image: url(../media/img/headerBg.webp);  background-size: cover;
+    document.querySelector(".Header_Video").innerHTML = ` <video style=" background-image: url(media/img/headerBg.webp);  background-size: cover;
     background-position: center;
     background-repeat: no-repeat;" class="Header_Video_play" autoplay muted loop>
     <source type='video/mp4' src="media/video/BrighLights.mp4">
